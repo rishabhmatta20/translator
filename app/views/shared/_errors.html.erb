@@ -1,0 +1,8 @@
+<div class='errors'>
+  <h4>Please solve the following errors to send the message.</h4>
+  <ol>
+    <% @user.error_messages.each do |error_for, message| %>
+      <li style="color: red;"><%= error_message_text(error_for, message) %></li>
+    <% end %>
+  </ol>
+</div>
