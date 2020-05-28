@@ -1,0 +1,22 @@
+hi:
+  user_form:
+    Send Us A Message: 'हमें एक संदेश भेजें'
+    Tell us your name: 'हमें अपना नाम बताओ'
+    First name: 'पहला नाम'
+    Last name: 'उपनाम'
+    Enter your email: 'अपना ईमेल दर्ज करें'
+    example_mail: 'उदाहरण के लिए। example@emailcom'
+    Enter phone number: 'फोन नंबर दर्ज'
+    example_phone_number: 'उदाहरण के लिए।+1 800 000000'
+    Message: 'संदेश'
+    Write us a message: 'हमें एक संदेश लिखें'
+    Send Message: 'संदेश भेजें'
+    Sending: 'भेजा जा रहा है'
+
+  information:
+    Address: 'पता'
+    Address line: 'माडा सेंटर 8 वीं मंजिल, 379 हडसन सेंट, न्यूयॉर्क, एनवाई 10018 यूएस'
+
+  general:
+    Lets talk: 'चलो बात करते है'
+    General support: 'सामान्य समर्थन'

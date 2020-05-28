@@ -3,6 +3,11 @@ class User < ApplicationRecord
   validates :message, presence: true
   after_save :send_mail_to_ajackus
 
+  LANGUAGES = {
+    en: 'English',
+    hi: 'हिन्दी'
+  }.freeze
+
   def error_messages
     errors.messages
   end

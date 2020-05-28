@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :set_locale
+
+  #this method is for handling various request types and their response messages
   def respond_with(request_type, *args)
     path = args[0]
     respond_to do |format|
@@ -8,5 +11,11 @@ class ApplicationController < ActionController::Base
         end
       end
     end
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.locale
   end
 end

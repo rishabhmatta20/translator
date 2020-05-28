@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    @languages = User::LANGUAGES
+    if params[:locale].present?
+      respond_with('js')
+    else
+      respond_with('html')
+    end
   end
 
   def create

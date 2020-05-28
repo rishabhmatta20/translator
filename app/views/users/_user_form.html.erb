@@ -1,37 +1,37 @@
-<%= form_for @user, validate: true, html: { class: 'contact100-form validate-form' }, remote: true do |f| %>
-  <span class='contact100-form-title'>
-    Send Us A Message
-  </span>
+<%= form_for user, validate: true, html: { class: 'contact100-form validate-form' }, remote: true do |f| %>
 
-  <label class='label-input100' for='first-name'>Tell us your name *</label>
+  <span class='contact100-form-title'>
+    <%= t('user_form.Send Us A Message') %>
+  </span>
+  <label class='label-input100' for='first-name'><%= t('user_form.Tell us your name') %></label>
   <div class='wrap-input100 rs1-wrap-input100 validate-input' data-validate='Type first name'>
-    <%= f.text_field :first_name, placeholder: 'First name', class: 'input100' %>
+    <%= f.text_field :first_name, placeholder: "#{t('user_form.First name')}", class: 'input100' %>
     <span class='focus-input100'></span>
   </div>
   <div class='wrap-input100 rs2-wrap-input100 validate-input' data-validate='Type last name'>
-    <%= f.text_field :last_name, placeholder: 'Last name', class: 'input100' %>
+    <%= f.text_field :last_name, placeholder: "#{t('user_form.Last name')}", class: 'input100' %>
     <span class='focus-input100'></span>
   </div>
 
-  <label class='label-input100' for='email'>Enter your email *</label>
+  <label class='label-input100' for='email'><%= t('user_form.Enter your email') %> *</label>
   <div class='wrap-input100 validate-input' data-validate = 'Valid email is required: ex@abc.xyz'>
-    <%= f.text_field :email, placeholder: 'Eg. example@email.com', class: 'input100' %>
+    <%= f.text_field :email, placeholder: "#{t('user_form.example_mail')}", class: 'input100' %>
     <span class='focus-input100'></span>
   </div>
 
-  <label class='label-input100' for='phone'>Enter phone number</label>
+  <label class='label-input100' for='phone'><%= t('user_form.Enter phone number') %></label>
   <div class='wrap-input100'>
-    <%= f.text_field :phone_number, placeholder: 'Eg. +1 800 000000', class: 'input100' %>
+    <%= f.text_field :phone_number, placeholder: "#{t('user_form.example_phone_number')}", class: 'input100' %>
     <span class='focus-input100'></span>
   </div>
 
-  <label class='label-input100' for='message'>Message *</label>
+  <label class='label-input100' for='message'><%= t('user_form.Message') %> *</label>
   <div class='wrap-input100 validate-input' data-validate = 'Message is required'>
-    <%= f.text_area :message, placeholder: 'Write us a message', class: 'input100' %>
+    <%= f.text_area :message, placeholder: "#{t('user_form.Write us a message')}", class: 'input100' %>
     <span class='focus-input100'></span>
   </div>
 
   <div class='container-contact100-form-btn'>
-    <%= f.submit 'Send Message', class: 'contact100-form-btn' %>
+    <%= f.submit "#{t('user_form.Send Message')}", class: 'contact100-form-btn', data: { disable_with: "#{t('user_form.Sending')}" } %>
   </div>
 <% end %>

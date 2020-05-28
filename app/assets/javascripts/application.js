@@ -10,16 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery_ujs
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
 
 // --------------------- Vendor ------------------------ //
 
 //= require animsition/animsition
 //= require animsition/animsition.min
-//= require jquery/jquery-3.2.1.min
 //= require bootstrap/bootstrap
 //= require bootstrap/bootstrap.min
 //= require popper/popper
@@ -34,3 +35,16 @@
 //= require select2/select2.min
 
 // --------------------- /Vendor ------------------------ //
+
+$(document).ready(function() {
+  $('#language-dropdown').change(function(){
+    locale = $(this).find(":selected").data('locale');
+    $.ajax({
+      url: window.location.href,
+      data: {
+        locale: locale
+      },
+      dataType: 'script'
+    });
+  });
+});
