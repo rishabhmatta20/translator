@@ -21,4 +21,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     post users_path, xhr: true, params: { user: { first_name: 'rishabh', last_name: 'matta', email: nil, phone_number: 123456789, message: 'testing' } }
     assert :false
   end
+
+  test 'for locale hi' do
+    get root_path, xhr: true, params: { locale: 'hi' }
+    assert_match 'हमें अपना नाम बताओ', response.body
+  end
+
+  test 'for locale en' do
+    get root_path, xhr: true, params: { locale: 'en' }
+    assert_match 'Tell us your name', response.body
+  end
 end
