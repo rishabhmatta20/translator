@@ -40,4 +40,5 @@ Things you may want to cover:
 1. to run controller test case use command ruby -I test test/controllers/users_controller_test.rb on terminal.
 2. to run model test case use command ruby -I test test/models/user_test.rb on terminal.
 
-
+#Command to run test coverage report on linux
+ --> xdg-open coverage/index.html
