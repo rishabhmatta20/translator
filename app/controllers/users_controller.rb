@@ -2,19 +2,23 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @languages = User::LANGUAGES
-    if params[:locale].present?
-      respond_with('js')
-    else
-      respond_with('html')
+    respond_to do |format|
+      if params[:locale].present?
+        format.js
+      else
+        format.html
+      end
     end
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      respond_with('js', root_path, 'notice', 'Your message has been sent successfully')
-    else
-      respond_with('js')
+    respond_to do |format|
+      if @user.save
+        format.js { redirect_to root_path, notice: 'Your message has been sent successfully' }
+      else
+        format.js
+      end
     end
   end
 

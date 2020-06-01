@@ -30,7 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  user_form:
+  form:
     Send Us A Message: 'Send Us A Message'
     Tell us your name: 'Tell us your name'
     First name: 'First name'

@@ -1,10 +1,13 @@
-<h4>Language selection</h4>
-<div class="form-group">
-  <select class="form-control" id='language-dropdown' style="width: 20%;">
-    <% @languages.each do |locale, language| %>
-      <option data-locale=<%= locale %> <%= is_selected_locale?(locale) ? selected = 'selected' : '' %>><%= language %></option>
-    <% end %>
-  </select>
+<div class="container">
+  <%= notice %>
+  <%= alert %>
+  <h4>Language selection</h4>
+  <div class="form-group">
+    <select class="form-control" id='language-dropdown' style="width: 20%;">
+      <% @languages.each do |locale, language| %>
+        <option data-locale=<%= locale %> <%= is_selected_locale?(locale) ? selected = 'selected' : '' %>><%= language %></option>
+      <% end %>
+    </select>
+  </div>
+  <%= render 'landing_page_content', user: @user, languages: @languages %>
 </div>
-<%= render 'container', user: @user %>
-
